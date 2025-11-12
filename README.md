@@ -47,7 +47,7 @@ virtualenv ~/venv/periodicwave
 source ~/venv/periodicwave/bin/activate
 ```
 
-4. Install ferminet with all dependencies
+4. Install PeriodicWave with all dependencies
 In the periodicwave folder that contains setup.py:
 ```
 pip install -e .
@@ -281,7 +281,6 @@ cloudpickle==3.1.1
 decorator==5.2.1
 distrax==0.1.7
 dm-tree==0.1.9
--e git+https://github.com/LiangFu-Phys/NN-VMC.git@66b87d5d68f110d26d6b41710bc161217bd1f44b#egg=ferminet&subdirectory=deeppsi-public-v0
 folx @ git+https://github.com/microsoft/folx@d05c107028e3f88239ebf9e894d4a8c01abf90f6
 gast==0.6.0
 h5py==3.14.0
@@ -310,7 +309,7 @@ wadler_lindig==0.1.7
 wrapt==1.17.3
 ```
 
-The list of packages for which the code works with GPU is:
+The list of packages for which the code works with GPU is (verified 10/17/2025):
 
 ```
 absl-py==2.3.1
@@ -320,21 +319,19 @@ cloudpickle==3.1.1
 decorator==5.2.1
 distrax==0.1.7
 dm-tree==0.1.9
-# Editable install with no version control (ferminet==0.2)
--e /work/submit/geier/deeppsi/PeriodicWave
 folx @ git+https://github.com/microsoft/folx@d05c107028e3f88239ebf9e894d4a8c01abf90f6
 gast==0.6.0
-h5py==3.14.0
-immutabledict==4.2.1
-jax==0.7.2
-jax-cuda12-pjrt==0.7.2
-jax-cuda12-plugin==0.7.2
-jaxlib==0.7.2
+h5py==3.15.1
+immutabledict==4.2.2
+jax==0.8.0
+jax-cuda12-pjrt==0.8.0
+jax-cuda12-plugin==0.8.0
+jaxlib==0.8.0
 jaxtyping==0.3.3
-kfac-jax @ git+https://github.com/deepmind/kfac-jax@d9ecae99e588e4abbb0dd3d4e977d1266824e14c
+kfac-jax @ git+https://github.com/deepmind/kfac-jax@55111a15e51b38a4cefbfd16cdda52472cda2632
 ml_collections==1.1.0
 ml_dtypes==0.5.3
-numpy==2.3.3
+numpy==2.3.4
 nvidia-cublas-cu12==12.9.1.4
 nvidia-cuda-cupti-cu12==12.9.79
 nvidia-cuda-nvcc-cu12==12.9.86
@@ -350,14 +347,15 @@ nvidia-nvshmem-cu12==3.4.5
 opt_einsum==3.4.0
 optax==0.2.6
 pandas==2.3.3
+-e git+https://github.com/mg607/PeriodicWave.git@3c54ee38e16eac1feb7190695351ef6affb3d439#egg=periodicwave
 pyblock==0.6
 python-dateutil==2.9.0.post0
 pytz==2025.2
 PyYAML==6.0.3
 scipy==1.16.2
 six==1.17.0
-tfp-nightly==0.26.0.dev20251009
-toolz==1.0.0
+tfp-nightly==0.26.0.dev20251017
+toolz==1.1.0
 typing_extensions==4.15.0
 tzdata==2025.2
 wadler_lindig==0.1.7

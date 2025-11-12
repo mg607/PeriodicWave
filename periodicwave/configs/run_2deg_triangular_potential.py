@@ -127,7 +127,7 @@ supercell_lattice, moire_lattice = lattices._triangular_lattice_vecs_periodic_po
 area = np.linalg.det(supercell_lattice)
 
 # Set up the Hamiltonian parameters
-cfg.system.make_local_energy_fn = "ferminet.pbc.hamiltonian.local_energy"
+cfg.system.make_local_energy_fn = "periodicwave.pbc.hamiltonian.local_energy"
 cfg.system.make_local_energy_kwargs = {"lattice": supercell_lattice, 
     "potential_type": 'CoulombMoire',
     "potential_kwargs": {'moire_lattice_vectors': moire_lattice,
@@ -138,11 +138,11 @@ cfg.system.make_local_energy_kwargs = {"lattice": supercell_lattice,
 cfg.system.pbc_lattice = supercell_lattice
 
 # feature layer for pbc
-cfg.network.make_feature_layer_fn = ("ferminet.pbc.feature_layer.make_pbc_feature_layer")
+cfg.network.make_feature_layer_fn = ("periodicwave.pbc.feature_layer.make_pbc_feature_layer")
 cfg.network.make_feature_layer_kwargs = { "lattice": supercell_lattice, "include_r_ae": False }
 
 # envelopes
-cfg.network.make_envelope_fn = ( "ferminet.envelopes.make_null_envelope" ) # use no envelope with pbc
+cfg.network.make_envelope_fn = ( "periodicwave.envelopes.make_null_envelope" ) # use no envelope with pbc
 
 # Set batch size
 cfg.batch_size = 1024
