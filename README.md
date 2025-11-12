@@ -31,34 +31,39 @@ Massachusetts Institute of Technology
 
 ## Installation (Verified on 10/09/2025)
 
-1. Install python 3.13 environment:
+1. Clone PeriodicWave repository
+```
+git clone https://github.com/mg607/PeriodicWave
+```
+
+2. Install python 3.13 environment:
 ```
 conda create --name py313 python=3.13 numpy scipy pandas matplotlib virtualenv
 ```
 
-2. Activate py313 environment and create virtualenv from there:
+3. Activate py313 environment and create virtualenv from there:
 ```
 conda activate py313
 virtualenv ~/venv/periodicwave
 ```
 
-3. Activate new virtual environment
+4. Activate new virtual environment
 ```
 source ~/venv/periodicwave/bin/activate
 ```
 
-4. Install PeriodicWave with all dependencies
+5. Install PeriodicWave with all dependencies
 In the periodicwave folder that contains setup.py:
 ```
 pip install -e .
 ```
 
-5. Optionally: Install GPU support if a GPU is available, The following updates JAX and installs all cuda versions.
+6. Optionally: Install GPU support if a GPU is available, The following updates JAX and installs all cuda versions.
 ```
 pip install -U "jax[cuda12]"
 ```
 
-6. Verify installation:
+7. Verify installation:
 The following command should run a calculation of a two-dimensional Coulomb gas for 2 spin-up electrons at r_s = 10 with CustomPsiformer:
 ```
 python3 periodicwave/configs/run_2deg.py
